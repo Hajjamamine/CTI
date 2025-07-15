@@ -244,4 +244,5 @@ hadoop/
 
 # Custom project specific
 # Add your specific files here
-test_dataset.csv
+network_traffic.csv
+data.json
