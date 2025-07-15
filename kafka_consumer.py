@@ -6,7 +6,7 @@ KAFKA_TOPIC = "network-traffic"
 KAFKA_BOOTSTRAP_SERVERS = "192.168.0.230:9092"
 OUTPUT_FILE = r"C:\Users\PC\Desktop\CTI\data.json"
 
-def consume_and_write(max_messages=100):
+def consume_and_write(max_messages=1500):
     consumer = KafkaConsumer(
         KAFKA_TOPIC,
         bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
