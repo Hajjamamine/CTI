@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  spark-master:
+    image: bitnami/spark:3.4.0
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+
+  spark-worker:
+    image: bitnami/spark:3.4.0
+    container_name: spark-worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+
+  jupyter:
+    image: jupyter/pyspark-notebook
+    container_name: spark-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - PYSPARK_PYTHON=/opt/conda/bin/python3
+      - PYSPARK_DRIVER_PYTHON=/opt/conda/bin/python3
+    depends_on:
+      - spark-master
