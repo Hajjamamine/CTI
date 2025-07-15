@@ -37,12 +37,6 @@ predictions_with_labels = predictions_with_id.join(true_labels_with_id, on="row_
 # --- Show predictions with true labels ---
 predictions_with_labels.select("prediction", "Label").show(10)
 
-# --- Evaluate accuracy ---
-evaluator = MulticlassClassificationEvaluator(
-    labelCol="Label", predictionCol="prediction", metricName="accuracy"
-)
-accuracy = evaluator.evaluate(predictions_with_labels)
-print(f"\n✅ Model Accuracy: {accuracy:.4f}")
 
 # --- Stop Spark session ---
 spark.stop()
