@@ -1,3 +1,5 @@
 import pyspark
 print(pyspark.__version__)
-# Should print 3.4.0
+
+import os
+print(os.path.exists(r"C:\Users\PC\Desktop\CTI\threat_model"))  # Should print True
