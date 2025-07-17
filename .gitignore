@@ -246,3 +246,7 @@ hadoop/
 # Add your specific files here
 network_traffic.csv
 data.json
+
+predictions_output/
+checkpoint_json/
+json_to_mongodb_realtime.log
