@@ -125,7 +125,7 @@ logger.info("MongoDB connector should be available now")
 logger.info("Setting up Kafka consumer...")
 df_kafka = spark.readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "xxx.xxx.xxx.xxx:9092") \
+    .option("kafka.bootstrap.servers", "192.168.0.230:9092") \
     .option("subscribe", "network-traffic") \
     .option("startingOffsets", "latest") \
     .load()
