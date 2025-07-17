@@ -1,29 +1,17 @@
-import socket
+from pymongo import MongoClient
 
-def get_local_ip():
-    """Get the local IP address of the machine"""
-    try:
-        # Connect to a remote server to determine local IP
-        # This doesn't actually send data, just determines routing
-        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-            s.connect(("8.8.8.8", 80))
-            local_ip = s.getsockname()[0]
-        return local_ip
-    except Exception as e:
-        return f"Error getting IP: {e}"
+client = MongoClient("mongodb://localhost:27017")
+db = client["cti_db"]
+collection = db["predictions"]
 
-def get_hostname_ip():
-    """Alternative method using hostname"""
-    try:
-        hostname = socket.gethostname()
-        ip_address = socket.gethostbyname(hostname)
-        return ip_address
-    except Exception as e:
-        return f"Error getting IP: {e}"
-
-if __name__ == "__main__":
-    print("Machine IP Addresses:")
-    print(f"Local IP (method 1): {get_local_ip()}")
-    print(f"Local IP (method 2): {get_hostname_ip()}")
-    print(f"Hostname: {socket.gethostname()}")
-
+collection.insert_one({
+    "Destination_Port": 8080,
+    "Flow_Duration": 12000,
+    "Total_Fwd_Packets": 20,
+    "Total_Backward_Packets": 30,
+    "Fwd_Header_Length": 150,
+    "Bwd_Header_Length": 125,
+    "Fwd_Packets_s": 2.5,
+    "Bwd_Packets_s": 4.4,
+    "prediction": 0
+})
