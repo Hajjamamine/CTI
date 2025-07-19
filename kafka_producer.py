@@ -4,7 +4,7 @@ import time
 from kafka import KafkaProducer
 
 KAFKA_TOPIC = "network-traffic"
-KAFKA_BOOTSTRAP_SERVERS = "192.168.0.230:9092"
+KAFKA_BOOTSTRAP_SERVERS = "192.168.1.166:9092"
 
 producer = KafkaProducer(
     bootstrap_servers = KAFKA_BOOTSTRAP_SERVERS,
