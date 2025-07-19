@@ -250,3 +250,4 @@ data.json
 predictions_output/
 checkpoint_json/
 json_to_mongodb_realtime.log
+checkpoint_
