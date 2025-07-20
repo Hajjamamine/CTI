@@ -134,7 +134,7 @@ logger.info("Starting offset: latest")
 
 df_kafka = spark.readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "192.168.1.166:9092") \
+    .option("kafka.bootstrap.servers", "192.168.1.33:9092") \
     .option("subscribe", "network-traffic") \
     .option("startingOffsets", "latest") \
     .load()

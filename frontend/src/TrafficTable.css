@@ -1,59 +1,69 @@
 /* src/TrafficTable.css */
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
   background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
   color: #ffffff;
 }
 
-h1, h2 {
-  text-align: center;
-  margin-top: 20px;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
+.MuiCard-root {
+  border-radius: 20px !important;
+  box-shadow: 0 0 40px #00ffff55 !important;
+  background: rgba(30,40,80,0.85) !important;
+  backdrop-filter: blur(10px);
 }
 
-table {
-  width: 90%;
-  margin: 30px auto;
-  border-collapse: collapse;
+.MuiTable-root {
   border-radius: 15px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
 }
 
-th, td {
-  padding: 12px 15px;
+.MuiTableCell-root {
+  padding: 12px 15px !important;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  color: #ffffff !important;
+  font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
 }
 
-th {
+.MuiTableCell-head {
   background: rgba(0, 255, 255, 0.1);
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   letter-spacing: 1px;
+  color: #00ffff !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ffff;
 }
 
-tr:hover {
-  background: rgba(0, 255, 255, 0.15);
+
+.MuiTableRow-root:hover {
+  background: rgba(0, 255, 255, 0.15) !important;
   transition: 0.3s ease-in-out;
 }
 
+
 .safe {
-  background-color: rgba(0, 255, 0, 0.1);
-  color: #00ff88;
+  background-color: rgba(0, 255, 88, 0.08) !important;
+  color: #00ff88 !important;
   font-weight: bold;
   text-shadow: 0 0 5px #00ff88;
 }
 
 .malicious {
-  background-color: rgba(255, 0, 0, 0.1);
-  color: #ff5555;
+  background-color: rgba(255, 44, 44, 0.08) !important;
+  color: #ff4444 !important;
   font-weight: bold;
   text-shadow: 0 0 5px #ff4444;
+}
+
+.MuiChip-root {
+  font-family: 'Orbitron', 'Roboto', Arial, sans-serif !important;
+  font-size: 1rem !important;
+  letter-spacing: 1px;
+  box-shadow: 0 0 5px #00ffff44;
 }
