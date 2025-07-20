@@ -185,8 +185,7 @@ checkpoints/
 *.parquet
 *.delta
 
-# Jupyter notebook outputs
-*.ipynb
+
 
 # IDE specific
 .vscode/
