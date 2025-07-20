@@ -128,13 +128,13 @@ logger.info("Spark logging level set to WARN")
 
 # Read from kafka
 logger.info("Setting up Kafka stream connection...")
-logger.info("Kafka broker: 192.168.1.166:9092")
+logger.info("Kafka broker: xxx.xxx.xxx.xxx:9092")
 logger.info("Kafka topic: network-traffic")
 logger.info("Starting offset: latest")
 
 df_kafka = spark.readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "192.168.1.33:9092") \
+    .option("kafka.bootstrap.servers", "xxx.xxx.xxx.xxx:9092") \
     .option("subscribe", "network-traffic") \
     .option("startingOffsets", "latest") \
     .load()
